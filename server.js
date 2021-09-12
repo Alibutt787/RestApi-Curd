@@ -4,8 +4,8 @@ const express = require('express');
 var _und = require('underscore');
 const fse = require('./movies.json')
 const app = express()
-const port = 3000
 
+const port = 3000
 app.use(bodyParse.urlencoded({ extended: true }));
 app.use(bodyParse.json());
 
@@ -28,12 +28,20 @@ app.put('/update/:id', function (req, res) {
     if (req.params.id) {
         _und.each(fse, function (ele, index) {
             if (req.params.id == ele.id) {
-                ele.title = "tytyty";
+                ele.title = req.body.title;
             }
         }); res.json(fse);
     } else {
         console.log('hshshs');
     }
+})
+app.put('/update/', function (req, res) {
+    
+                ele.id = req.body.id;
+                ele.title = req.body.title;
+        
+         res.json(fse);
+  
 })
 
 //  //REST API DELETE Method
