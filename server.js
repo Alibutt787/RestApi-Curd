@@ -35,14 +35,7 @@ app.put('/update/:id', function (req, res) {
         console.log('hshshs');
     }
 })
-app.put('/update/', function (req, res) {
-    
-                ele.id = req.body.id;
-                ele.title = req.body.title;
-        
-         res.json(fse);
-  
-})
+
 
 //  //REST API DELETE Method
 app.delete('/deldata/:id', function (req, res) {
@@ -71,3 +64,34 @@ app.delete('/deldata/:id', function (req, res) {
 app.listen(port, () => {
     console.log(`app listening at http://localhost:${port}`)
 });
+
+
+// How To Access The Api Deployed On HTTPS       use url link instead of http://localhost:3000/list
+// //Get
+// await fetch('http://localhost:3000/list')
+// //Post
+// fetch('http://localhost:3000/postdata', {
+// method: 'POST',
+// body: JSON.stringify({
+// id: 5,
+// title: "Tabish "
+// }),
+// headers: {
+// "Content-type": "application/json; charset=UTF-8"
+// }
+// })
+// //Update
+// fetch('http://localhost:3000/update/', {
+// method: 'PUT',
+// body: JSON.stringify({ id:7,
+// title: "Aqib Ali Butt",
+// completed: false
+// }),
+// headers: {
+// "Content-type": "application/json; charset=UTF-8"
+// }
+// })
+// //Delete
+// await fetch("http://localhost:3000/deldata/3", {
+// method: 'DELETE'
+// })
